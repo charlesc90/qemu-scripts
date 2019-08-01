@@ -7,7 +7,7 @@ Virtualization needs to be enabled in your EFI/BIOS for qemu-kvm to work properl
 
 libvirt generally uses the cpu model that is most similar to the host's, while these scripts use the host's
 
-Using absolute filepaths rather than relative filepaths is a good idea.
+Using absolute filepaths is a good idea.
 
 It seems that there are some devices getting initialized by default, networking works without defining network interfaces. I'll include proper definitions for network interfaces soon.
 
