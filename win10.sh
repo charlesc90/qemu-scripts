@@ -1,11 +1,15 @@
 #!/bin/bash
 
-chipset="q35"
+chipset="type=q35,kernel_irqchip=on,mem-merge=on"
 vcpu="host"
-memories="4096M"
+hyper="kvm,thread=multi"
+memories="8192M"
 bios="/usr/share/qemu/ovmf-x86_64-ms-4m.bin"
-gpu="qxl"
-dvd="Windows10_InsiderPreview_Client_x64_en-us_18343.iso"
-disk="win10.qcow2"
+gpu="virtio"
+gpuaccel="gtk,gl=on"
+nets="user,ipv6=off,model=virtio"
+dvd="/home/charlesc/kvm/win10.iso"
+disk="/home/charlesc/kvm/win10.qcow2"
 
-qemu-kvm -machine ${chipset} -cpu ${vcpu} -m ${memories} -vga ${gpu} -cdrom ${dvd} ${disk}
+qemu-kvm -machine ${chipset} -cpu ${vcpu} -accel ${hyper} -m ${memories} \
+  -vga ${gpu} -display ${gpuaccel} -nic ${nets} -cdrom ${dvd} ${disk}
