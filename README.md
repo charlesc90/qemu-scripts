@@ -1,5 +1,5 @@
 # qemu-scripts
-bash scripts for qemu and libvirt, xml configs for libvirt
+bash scripts for qemu and libvirt
 
 # Important notes:
 
