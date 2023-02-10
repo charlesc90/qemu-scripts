@@ -10,16 +10,16 @@ nets="user,model=virtio-net-pci"
 sound="alsa,id=example,out.channels=1"
 disk="openSUSE-Tumbleweed-Minimal-VM.x86_64-kvm-and-xen.qcow2"
 
-qemu-kvm					          \
-	-machine ${chipset} 			\
-	-cpu ${vcpu}				      \
-	-smp ${multi}				      \
-	-accel ${hyper} 			    \
-	-m ${memories}   			    \
-	-nic ${nets}				      \
-	-pflash ${efi}				    \
-  -vga ${gpu} 				      \
-  -display ${gpuaccel} 		  \
-  -nic ${nets}				      \
-  -audiodev ${sound}        \              \
-  -boot d ${disk}		
+qemu-kvm					          
+	-machine ${chipset} \			
+	-cpu ${vcpu} \				      
+	-smp ${multi} \				      
+	-accel ${hyper} \ 			    
+	-m ${memories} \   			    
+	-nic ${nets} \				      
+	-pflash ${efi} \				    
+  	-vga ${gpu} \ 				      
+  	-display ${gpuaccel} \ 		  
+  	-nic ${nets} \		      
+  	-audiodev ${sound} \                      
+  	-boot d ${disk}	\	
